@@ -112,15 +112,32 @@ function multigreeting(name, code)  {
 //
 // Input: a, b positive integers
 // Output: The greatest common divisor, which is g * 2**d
+// d = 0
+// while a and b are both even
+//     a = a/2
+//     b = b/2
+//     d = d + 1
+// while a != b
+//     if a is even then a = a/2
+//     else if b is even then b = b/2
+//     else if a > b then a = (a – b)/2
+//     else b = (b – a)/2
+// g = a
+// output g * 2**d
+
+// Write a function called gcd that takes two arguments and returns the greatest common
+// divisor using the instructions above.
+let a > 0
+let b > 0
 let d = 0
-while (a > 0 && b > 0) {
-    if (a === a/2 && b === b/2) {
-        return g * (2**d)
+let g = a
+
+while (a === a/2 && b === b/2) {
+    return g * (2**d)
     d += 1    
     }
 }
 
-let g = a
 while (a != b) {
     if (a === a/2) {
         return (a === a/2) 
@@ -132,17 +149,12 @@ while (a != b) {
         return ((b - a) / 2)
     }
 }
-//     if a is even then a = a/2
-//     else if b is even then b = b/2
-//     else if a > b then a = (a – b)/2
-//     else b = (b – a)/2
-// g = a
-// output g * 2**d
-
-// Write a function called gcd that takes two arguments and returns the greatest common
-// divisor using the instructions above.
 
 function gcd(a, b) {
-    return g * (2**d)
+    if (a === a/2 && b === b/2) {
+        return g * (2**d)
+    } else (a != b) {
+        return g * (2**d)
+    }
     }
 }
